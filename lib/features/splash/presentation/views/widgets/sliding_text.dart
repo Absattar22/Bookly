@@ -15,17 +15,9 @@ class _SlidingTextState extends State<SlidingText>
   @override
   void initState() {
     super.initState();
-    animationController = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 1500),
-    );
-
-    slidingAnimation =
-        Tween<Offset>(begin: const Offset(0, -2), end: const Offset(0, 0))
-            .animate(animationController);
-
-    animationController.forward();
+    initAnimation();
   }
+
 
   @override
   void dispose() {
@@ -52,4 +44,21 @@ class _SlidingTextState extends State<SlidingText>
           );
         });
   }
+   void initAnimation() {
+    animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 1500),
+    );
+    
+    slidingAnimation =
+        Tween<Offset>(begin: const Offset(0, -2), end: const Offset(0, 0))
+            .animate(CurvedAnimation(
+              parent: animationController,
+              curve: Curves.fastEaseInToSlowEaseOut
+    
+            ));
+    
+    animationController.forward();
+  }
 }
+
