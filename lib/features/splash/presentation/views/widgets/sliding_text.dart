@@ -1,29 +1,9 @@
 import 'package:flutter/material.dart';
 
-class SlidingText extends StatefulWidget {
-  const SlidingText({super.key});
+class SlidingText extends StatelessWidget {
+  const SlidingText({super.key, required this.slidingAnimation});
 
-  @override
-  State<SlidingText> createState() => _SlidingTextState();
-}
-
-class _SlidingTextState extends State<SlidingText>
-    with SingleTickerProviderStateMixin {
-  late AnimationController animationController;
-  late Animation<Offset> slidingAnimation;
-
-  @override
-  void initState() {
-    super.initState();
-    initAnimation();
-  }
-
-
-  @override
-  void dispose() {
-    animationController.dispose();
-    super.dispose();
-  }
+  final Animation<Offset> slidingAnimation;
 
   @override
   Widget build(BuildContext context) {
@@ -44,21 +24,4 @@ class _SlidingTextState extends State<SlidingText>
           );
         });
   }
-   void initAnimation() {
-    animationController = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 1500),
-    );
-    
-    slidingAnimation =
-        Tween<Offset>(begin: const Offset(0, -2), end: const Offset(0, 0))
-            .animate(CurvedAnimation(
-              parent: animationController,
-              curve: Curves.fastEaseInToSlowEaseOut
-    
-            ));
-    
-    animationController.forward();
-  }
 }
-
