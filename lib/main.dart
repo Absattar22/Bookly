@@ -1,13 +1,12 @@
-
 import 'package:bookly/features/splash/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp( const Bookly(),
+  runApp(
+    const Bookly(),
   );
 }
 
@@ -17,17 +16,19 @@ class Bookly extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(360, 690),
-      minTextAdapt: true,
-      splitScreenMode: true,
-      builder: (context, child) {
-        return GetMaterialApp(
-          debugShowCheckedModeBanner: false,
-          useInheritedMediaQuery: true, // يضمن تحديث الأبعاد مع DevicePreview
-          home: child,
-        );
-      },
-      child: const SplashView()
-    );
+        designSize: const Size(360, 690),
+        minTextAdapt: true,
+        splitScreenMode: true,
+        builder: (context, child) {
+          return GetMaterialApp(
+            theme: ThemeData().copyWith(
+              scaffoldBackgroundColor: const Color(0xff100B20),
+            ),
+            debugShowCheckedModeBanner: false,
+            useInheritedMediaQuery: true,
+            home: child,
+          );
+        },
+        child: const SplashView());
   }
 }
