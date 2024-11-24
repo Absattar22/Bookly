@@ -20,13 +20,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
   void initState() {
     super.initState();
     initAnimation();
-
-    Future.delayed(const Duration(seconds: 3), () {
-      Get.to(
-        () => const HomeView(),
-        transition: Transition.circularReveal,
-      );
-    });
+    navigateToHome();
   }
 
   @override
@@ -67,5 +61,14 @@ class _SplashViewBodyState extends State<SplashViewBody>
                 curve: Curves.fastEaseInToSlowEaseOut));
 
     animationController.forward();
+  }
+
+  void navigateToHome() {
+    Future.delayed(const Duration(seconds: 3), () {
+      Get.to(
+        () => const HomeView(),
+        transition: Transition.circularReveal,
+      );
+    });
   }
 }
