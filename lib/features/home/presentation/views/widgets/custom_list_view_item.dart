@@ -8,16 +8,15 @@ class CustomListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 120.h,
-      width: 100.w,
+      height: 160.h,
+      width: 130.w,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(16).w,
         color: Colors.red,
         image: const DecorationImage(
           fit: BoxFit.fill,
           image: AssetImage(
             AssestData.testImage,
-            
           ),
         ),
       ),
