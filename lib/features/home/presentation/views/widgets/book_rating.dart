@@ -13,18 +13,17 @@ class BookRating extends StatelessWidget {
           Icons.star,
           color: Color.fromARGB(255, 246, 222, 6),
         ),
-        SizedBox(width: 2.w),
+        SizedBox(width: 4.w),
         Text(
           '4.8',
-          style: TextStyle(
-            fontSize: 16.sp,
-            fontWeight: FontWeight.bold,
-          ),
+          style: Styles.textStyle16
+              .copyWith(color: Colors.white, fontWeight: FontWeight.w600),
         ),
         SizedBox(width: 4.w),
         Text(
           '(2300)',
-          style: Styles.textStyle14,
+          style: Styles.textStyle14
+              .copyWith(color: const Color.fromARGB(255, 172, 171, 171)),
         ),
       ],
     );
