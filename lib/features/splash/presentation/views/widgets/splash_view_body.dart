@@ -54,11 +54,13 @@ class _SplashViewBodyState extends State<SplashViewBody>
       duration: const Duration(milliseconds: 1500),
     );
 
-    slidingAnimation =
-        Tween<Offset>(begin: const Offset(0, -2), end: const Offset(0, 0))
-            .animate(CurvedAnimation(
-                parent: animationController,
-                curve: Curves.fastEaseInToSlowEaseOut));
+    slidingAnimation = Tween<Offset>(
+      begin: const Offset(0, -2),
+      end: const Offset(0, 0),
+    ).animate(CurvedAnimation(
+      parent: animationController,
+      curve: Curves.fastEaseInToSlowEaseOut,
+    ));
 
     animationController.forward();
   }
