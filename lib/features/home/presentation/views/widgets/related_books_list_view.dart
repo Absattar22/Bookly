@@ -15,10 +15,10 @@ class RelatedBooksListView extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           return Padding(
-            padding: const EdgeInsets.all(8).w,
+            padding: EdgeInsets.only(right: 12.h),
             child: Container(
               height: 150.h,
-              width: 80.w,
+              width: 90.w,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16).w,
                 color: const Color.fromARGB(255, 255, 255, 255),
