@@ -8,8 +8,8 @@ class CustomBookItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 160.h,
-      width: 130.w,
+      height: 180.h,
+      width: 140.w,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16).w,
         color: Colors.red,
