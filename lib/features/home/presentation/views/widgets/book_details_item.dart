@@ -16,17 +16,18 @@ class BookDetailsItem extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const CustomBookItem(),
-          SizedBox(height: 30.h),
+          SizedBox(height: 35.h),
           Text(
             'The Jungle Book',
             style: Styles.textStyle30.copyWith(color: Colors.white),
           ),
-          SizedBox(height: 6.h),
+          SizedBox(height: 2.h),
           Text(
             ' J.K. Rowling',
             style: Styles.textStyle18.copyWith(
                 color: const Color.fromARGB(255, 189, 188, 188),
-                fontWeight: FontWeight.w500),
+                fontWeight: FontWeight.w500,
+                fontStyle: FontStyle.italic),
           ),
           SizedBox(
             height: 6.h,
