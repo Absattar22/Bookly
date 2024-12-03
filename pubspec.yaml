@@ -37,6 +37,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.6
+  flutter_launcher_icons: ^0.14.1
   flutter_screenutil: ^5.9.3
   flutter_svg: ^2.0.15
   font_awesome_flutter: ^10.8.0
@@ -45,6 +46,12 @@ dependencies:
   google_fonts: ^6.2.1
   skeletonizer: ^1.4.2
   url_launcher: ^6.3.1
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/icon.png"
+  adaptive_icon_background: "#33BDCFFF"
+  adaptive_icon_foreground: "assets/images/icon.png"
 
 dev_dependencies:
   flutter_lints: ^4.0.0
