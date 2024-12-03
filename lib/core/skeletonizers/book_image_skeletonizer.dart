@@ -3,27 +3,28 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
-class RelatedBooksSkeletonizer extends StatelessWidget {
-  const RelatedBooksSkeletonizer({super.key});
+class BookImageSkeletonizer extends StatelessWidget {
+  const BookImageSkeletonizer({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Skeletonizer(
       child: SizedBox(
-        height: 120.h,
+        height: 180.h,
         child: ListView.builder(
-          itemCount: 10,
-          shrinkWrap: true,
+          physics: const BouncingScrollPhysics(),
+          itemCount: 5,
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
             return Padding(
-                padding: EdgeInsets.only(right: 12.h),
-                child: const CustomBookImage(
-                  imgUrl:
-                      'https://books.google.com/books/content?id=150CEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api',
-                  width: 90,
-                  height: 150,
-                ));
+              padding: EdgeInsets.all(8.w),
+              child: const CustomBookImage(
+                height: 170,
+                width: 110,
+                imgUrl:
+                    'https://books.google.com/books/content?id=150CEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api',
+              ),
+            );
           },
         ),
       ),

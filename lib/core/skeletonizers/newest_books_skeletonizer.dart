@@ -28,8 +28,10 @@ class NewestBooksSkeletonizer extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   const CustomBookImage(
+                    height: 130,
+                    width: 80,
                     imgUrl:
-                        'https://media0061.elcinema.com/uploads/_315x420_c5313ba3e783ea64483449be8336e6486a84c333eeff646af596fecf8dfde729.jpg',
+                        'https://books.google.com/books/content?id=150CEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api',
                   ),
                   SizedBox(width: 30.w),
                   Expanded(
