@@ -8,15 +8,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 class NewestBooksListViewItem extends StatelessWidget {
-  const NewestBooksListViewItem({super.key, required this.book});
+  const NewestBooksListViewItem({super.key, required this.bookModel});
 
-  final BookModel book;
+  final BookModel bookModel;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(AppRouter.kBookDetails);
+        GoRouter.of(context).push(AppRouter.kBookDetails, extra: bookModel);
       },
       child: SizedBox(
         height: 160.h,
@@ -30,7 +30,7 @@ class NewestBooksListViewItem extends StatelessWidget {
                 child: CachedNetworkImage(
                   height: 130.h,
                   width: 100.w,
-                  imageUrl: book.volumeInfo.imageLinks?.thumbnail ?? '',
+                  imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ?? '',
                   errorWidget: (context, url, error) => Container(
                     color: Colors.grey.shade300,
                     height: 130.h,
@@ -47,14 +47,14 @@ class NewestBooksListViewItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      book.volumeInfo.title!,
+                      bookModel.volumeInfo.title!,
                       style: Styles.textStyle20.copyWith(fontFamily: 'Sectra'),
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                     ),
                     SizedBox(height: 3.h),
                     Text(
-                      book.volumeInfo.authors![0],
+                      bookModel.volumeInfo.authors![0],
                       style: Styles.textStyle14,
                     ),
                     SizedBox(height: 3.h),
@@ -67,8 +67,8 @@ class NewestBooksListViewItem extends StatelessWidget {
                           ),
                         ),
                         const Spacer(),
-                         BookRating(
-                          count:book.volumeInfo.pageCount,
+                        BookRating(
+                          count: bookModel.volumeInfo.pageCount,
                         ),
                       ],
                     ),
