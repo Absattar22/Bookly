@@ -10,7 +10,7 @@ class AccessInfo extends Equatable {
   final bool? publicDomain;
   final String? textToSpeechPermission;
   final Epub? epub;
-  final Pdf? pdf;
+  final Pdf pdf;
   final String? webReaderLink;
   final String? accessViewStatus;
   final bool? quoteSharingAllowed;
@@ -22,7 +22,7 @@ class AccessInfo extends Equatable {
     this.publicDomain,
     this.textToSpeechPermission,
     this.epub,
-    this.pdf,
+    required this.pdf,
     this.webReaderLink,
     this.accessViewStatus,
     this.quoteSharingAllowed,
@@ -37,9 +37,7 @@ class AccessInfo extends Equatable {
         epub: json['epub'] == null
             ? null
             : Epub.fromJson(json['epub'] as Map<String, dynamic>),
-        pdf: json['pdf'] == null
-            ? null
-            : Pdf.fromJson(json['pdf'] as Map<String, dynamic>),
+        pdf: json['pdf'] = Pdf.fromJson(json['pdf'] as Map<String, dynamic>),
         webReaderLink: json['webReaderLink'] as String?,
         accessViewStatus: json['accessViewStatus'] as String?,
         quoteSharingAllowed: json['quoteSharingAllowed'] as bool?,
@@ -52,7 +50,7 @@ class AccessInfo extends Equatable {
         'publicDomain': publicDomain,
         'textToSpeechPermission': textToSpeechPermission,
         'epub': epub?.toJson(),
-        'pdf': pdf?.toJson(),
+        'pdf': pdf.toJson(),
         'webReaderLink': webReaderLink,
         'accessViewStatus': accessViewStatus,
         'quoteSharingAllowed': quoteSharingAllowed,
