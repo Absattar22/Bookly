@@ -5,7 +5,7 @@ import 'package:bookly/features/home/presentation/view%20model/related_books_cub
 import 'package:bookly/features/home/presentation/views/book_details_view.dart';
 import 'package:bookly/features/home/presentation/views/home_view.dart';
 import 'package:bookly/features/search/presentation/views/search_view.dart';
-import 'package:bookly/features/search/presentation/views/widgets/data/repos/search_repo_implementation.dart';
+import 'package:bookly/features/search/data/repos/search_repo_implementation.dart';
 import 'package:bookly/features/search/view%20model/search_books_cubit/search_books_cubit.dart';
 import 'package:bookly/features/splash/presentation/views/splash_view.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
