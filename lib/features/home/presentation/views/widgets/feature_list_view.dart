@@ -1,7 +1,7 @@
 import 'package:bookly/core/utils/app_router.dart';
 import 'package:bookly/features/home/presentation/view%20model/featured_books_cubit/featured_books_cubit.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_book_image.dart';
-import 'package:bookly/core/skeletonizers/skeletonizer_book_image.dart';
+import 'package:bookly/core/skeletonizers/book_image_skeletonizer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -50,7 +50,7 @@ class FeatureListView extends StatelessWidget {
             ),
           );
         } else {
-          return const SkeletonizerBookImage();
+          return const BookImageSkeletonizer();
         }
       },
     );
